@@ -1,14 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /* Routing */
 import { appRoutes } from './app.routing';
 
+/* Services */
+import { AuthService } from './services/auth.service';
+
 /* Components */
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { HeaderComponent } from './components/header/header.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -24,7 +29,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     LoginComponent,
     NotFoundComponent,
     SidebarComponent,
-    HeaderComponent,
+    NavbarComponent,
     HeroComponent,
     FooterComponent,
     PagesComponent,
@@ -33,8 +38,11 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
