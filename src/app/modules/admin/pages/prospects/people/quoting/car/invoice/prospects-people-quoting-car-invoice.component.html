@@ -1,0 +1,101 @@
+<!-- User Info -->
+<div class="bg-image bg-image-bottom" style="background-image: url('assets/img/photos/photo13@2x.jpg');">
+    <div class="bg-primary-dark-op py-30">
+        <div class="content content-full text-center">
+            <!-- Avatar -->
+            <div class="mb-15">
+                <a class="img-link" href="be_pages_generic_profile.html">
+                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="assets/img/avatars/avatar15.jpg" alt="">
+                </a>
+            </div>
+            <!-- END Avatar -->
+
+            <!-- Personal -->
+            <h1 class="h3 text-white font-w700 mb-25">ORP SEGUROS Y FINANZAS</h1>
+            <h1 class="h5 text-white font-w700 mb-25">AGENTE: {{agent.name+' '+agent.name_paternal+' '+agent.name_maternal}}</h1>
+            <!-- Personal -->
+        </div>
+    </div>
+</div>
+<!-- END User Info -->
+
+<!-- Main Content -->
+<div class="content">
+    <!-- Invoice -->
+    <div class="block">
+        <div class="block-header block-header-default">
+            <h3 class="block-title">#{{quotationId}}</h3>
+            <div class="block-options">
+                <a routerLink="/admin/prospects/people/quoting/car/costs/{{userId}}/{{quotationId}}">
+                <button type="button" class="btn btn-alt-success mr-5 mb-5" data-toggle="tooltip" data-placement="top" title="Agregar Aseguradora">
+                    <i class="fa fa-plus-square mr-5"></i>
+                </button></a>
+                <!-- Print Page functionality is initialized in Codebase() -> uiHelperPrint() -->
+                <button type="button" class="btn btn-alt-warning mr-5 mb-5" onclick="Codebase.helpers('print-page');">
+                    <i class="si si-printer mr-5"></i>
+                </button>
+                <button type="button" class="btn btn-alt-secondary mr-5 mb-5" data-toggle="block-option" ata-toggle="tooltip" data-placement="top" title="Vista Previa"data-action="fullscreen_toggle"></button>
+                <a href="https://api.whatsapp.com/send?phone=521{{user.cel}}&text=Hola {{user.name+' '+user.name_paternal+' '+user.name_maternal}}, en este mensaje te dejo la cotización de tu {{quotation.car_model+' '+quotation.car_year}}, por favor revisa este link: {{environment.host}}/#/car-preview/{{userId}}" target="_blank" (click)="onSendQuotation()">
+                <button type="button" class="btn btn-alt-info mr-5 mb-5" data-toggle="tooltip" data-placement="top" title="Enviar Cotización">
+                    <i class="fa fa-send mr-5"></i>
+                </button></a>
+            </div>
+        </div>
+        <div class="block-content">
+            <!-- Invoice Info -->
+            <div class="row my-20">
+                <!-- Company Info -->
+                <div class="col-6">
+                    <p class="h4">DETALLES DEL VEHÍCULO</p>
+                    <address>
+                        MARCA: {{quotation.car_make}}<br>
+                        MODELO: {{quotation.car_model}}<br>
+                        AÑO: {{quotation.car_year}}<br>
+                        TRANSMISIÓN: {{quotation.car_transmission}}
+                    </address>
+                </div>
+                <!-- END Company Info -->
+
+                <!-- Client Info -->
+                <div class="col-6 text-right">
+                    <p class="h4">DETALLES DEL CONDUCTOR</p>
+                    <address>
+                        NOMBRE: {{quotation.name+' '+quotation.name_paternal+' '+quotation.name_maternal}}<br>
+                        GÉNERO: {{(quotation.gender == 1) ? 'MASCULINO' : 'FEMENINO'}}<br>
+                        NACIMIENTO: {{quotation.birthdate_formated}}<br>
+                        CÓDIGO POSTAL: {{quotation.zip_code}}
+                    </address>
+                </div>
+                <!-- END Client Info -->
+            </div>
+            <!-- END Invoice Info -->
+
+            <!-- Table -->
+            <div class="table-responsive push">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="width: 120px;"></th>
+                            <th class="text-center" style="width: 120px;" *ngFor="let quotation of userQuotations">
+                                <img src="{{quotation.logo}}" width="78px">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">COTIZACIONES</td>
+                            <td class="text-center" *ngFor="let quotation of userQuotations"><a href="{{quotation.quotation_url}}" target="_blank"><div class="mb-5"><i class="si si-layers fa-2x"></i></div></a> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- END Table -->
+
+            <!-- Footer -->
+            <p class="text-muted text-center">El pago inicial contempla una cuota por derecho de póliza en el primer recibo.</p>
+            <!-- END Footer -->
+        </div>
+    </div>
+    <!-- END Invoice -->
+</div>
+<!-- END Main Content -->

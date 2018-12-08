@@ -1,0 +1,134 @@
+<!-- Hero -->
+<div class="bg-image bg-image-bottom" style="background-image: url('assets/img/photos/photo34@2x.jpg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-top text-center overflow-hidden">
+            <div class="pt-50 pb-20">
+                <h1 class="font-w700 text-white mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp">Prospectos</h1>
+                <h2 class="h4 font-w400 text-white-op invisible" data-toggle="appear" data-class="animated fadeInUp">Guardar Nuevo Prospecto</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<!-- Page Content -->
+<div class="content">
+    <div class="col-md-12">
+            <!-- Progress Wizard -->
+            <div class="js-wizard-simple block">
+                <!-- Step Tabs -->
+                <ul class="nav nav-tabs nav-tabs-block nav-fill" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#wizard-progress-step1" data-toggle="tab">Personal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#wizard-progress-step2" data-toggle="tab">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#wizard-progress-step3" data-toggle="tab">Seguimiento</a>
+                    </li>
+                </ul>
+                <!-- END Step Tabs -->
+
+                <!-- Form -->
+                <form>
+                    <!-- Wizard Progress Bar -->
+                    <div class="block-content block-content-sm">
+                        <div class="progress" data-wizard="progress" style="height: 8px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 34.3333%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <!-- END Wizard Progress Bar -->
+
+                    <!-- Steps Content -->
+                    <div class="block-content block-content-full tab-content" style="min-height: 265px;">
+                        <!-- Step 1 -->
+                        <div class="tab-pane active" id="wizard-progress-step1" role="tabpanel">
+                            <div class="form-group">
+                                <label for="wizard-progress-email">Nombre</label>
+                                <input class="form-control" type="text" id="nombre_prospecto" name="nombre_prospecto" [(ngModel)]="user.name">
+                            </div>
+                            <div class="form-group">
+                                <label for="wizard-progress-lastname">Apellido Paterno</label>
+                                <input class="form-control" type="text" id="apellido_paterno_prospecto" name="apellido_paterno_prospecto" [(ngModel)]="user.name_paternal">
+                            </div>
+                            <div class="form-group">
+                                <label for="wizard-progress-lastname">Apellido Materno</label>
+                                <input class="form-control" type="text" id="apellido_paterno_prospecto" name="apellido_paterno_prospecto" [(ngModel)]="user.name_maternal">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-select">Género</label>
+                                <select class="form-control" id="example-select" name="example-select" [(ngModel)]="user.gender">
+                                    <option value="0">Seleccionar Género</option>
+                                    <option value="1">Hombre</option>
+                                    <option value="2">Mujer</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <!-- END Step 1 -->
+
+                        <!-- Step 2 -->
+                        <div class="tab-pane" id="wizard-progress-step2" role="tabpanel">
+                            <div class="form-group">
+                                <label for="wizard-progress-email">Celular</label>
+                                <input class="form-control" type="text" id="nombre_prospecto" name="nombre_prospecto" [(ngModel)]="user.cel">
+                            </div>
+                            <div class="form-group">
+                                <label for="wizard-progress-lastname">Correo Electrónico</label>
+                                <input class="form-control" type="text" id="apellido_paterno_prospecto" name="apellido_paterno_prospecto" [(ngModel)]="user.email">
+                            </div>
+                        </div>
+                        <!-- END Step 2 -->
+
+                        <!-- Step 3 -->
+                        <div class="tab-pane" id="wizard-progress-step3" role="tabpanel">
+                            <div class="form-group">
+                                <label for="example-select">Fuente</label>
+                                <select class="form-control" id="example-select" name="example-select" [(ngModel)]="user.source">
+                                    <option value="0">Seleccionar Fuente</option>
+                                    <option value="{{source.source_id}}" *ngFor="let source of sources">{{source.name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="wizard-progress-lastname">Detalles</label>
+                                <input class="form-control" type="text" id="apellido_paterno_prospecto" name="apellido_paterno_prospecto" [(ngModel)]="user.details">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-select">Agente</label>
+                                <select class="form-control" id="example-select" name="example-select" [(ngModel)]="user.agent">
+                                    <option value="0">Seleccionar Operador</option>
+                                    <option value="{{agent.agent_id}}" *ngFor="let agent of agents">{{agent.name+' '+agent.name_paternal+' '+agent.name_maternal}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- END Step 3 -->
+                    </div>
+                    <!-- END Steps Content -->
+
+                    <!-- Steps Navigation -->
+                    <div class="block-content block-content-sm block-content-full bg-body-light">
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="button" class="btn btn-alt-secondary disabled" data-wizard="prev">
+                                    <i class="fa fa-angle-left mr-5"></i> Anterior
+                                </button>
+                            </div>
+                            <div class="col-6 text-right">
+                                <button type="button" class="btn btn-alt-secondary" data-wizard="next">
+                                    Siguiente <i class="fa fa-angle-right ml-5"></i>
+                                </button>
+                                <button type="button" class="btn btn-alt-primary d-none" data-wizard="finish" (click)="onSaveProspect()">
+                                    <i class="fa fa-check mr-5"></i> Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Steps Navigation -->
+                </form>
+                <!-- END Form -->
+            </div>
+            <!-- END Progress Wizard -->
+        </div>
+</div>
+<!-- END Page Content -->

@@ -1,0 +1,405 @@
+<!-- User Info -->
+<div class="bg-image bg-image-bottom" style="background-image: url('assets/img/photos/photo13@2x.jpg');">
+    <div class="bg-primary-dark-op py-30">
+        <div class="content content-full text-center">
+            <!-- Avatar -->
+            <div class="mb-15">
+                <a class="img-link" href="be_pages_generic_profile.html">
+                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="assets/img/avatars/avatar15.jpg" alt="">
+                </a>
+            </div>
+            <!-- Avatar -->
+
+            <!-- Personal -->
+            <h1 class="h3 text-white font-w700 mb-25">{{user.name+' '+user.name_paternal+' '+user.name_maternal}}</h1>
+            <!-- Personal -->
+        </div>
+    </div>
+</div>
+<!-- User Info -->
+
+<div class="content">
+    <!-- Cotizaciones -->
+    <div class="block">
+        <div class="block-header block-header-default">
+             <h3 class="block-title"><strong>COTIZACIONES ENVIADAS</strong></h3>
+                <div class="block-options">
+                    <a routerLink="/admin/prospects/people/quote/{{userId}}">
+                    <button type="button" class="btn btn-alt-success mr-5 mb-5">
+                        <i class="fa fa-plus mr-5"></i>COTIZACIÓN
+                    </button></a>
+                </div>
+        </div>
+    </div>
+    <div class="row items-push">
+        <div class="col-md-6 col-xl-3" *ngFor="let quotation of quotations">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="ribbon-box">0</div>
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-danger text-danger-light mx-auto my-20">
+                        <i class="fa fa-car"></i>
+                    </div>
+                    <div class="text-warning">
+                        <i class="fa fa-fw fa-star"></i>
+                        <i class="fa fa-fw fa-star"></i>
+                        <i class="fa fa-fw fa-star"></i>
+                        <i class="fa fa-fw fa-star"></i>
+                        <i class="fa fa-fw fa-star"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">SEGURO DE AUTO</div>
+                    <div class="font-size-sm text-muted">{{quotation.car_model}}</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a routerLink="/admin/prospects/people/quoting/car/{{userId}}/{{quotation.quotation_id}}">
+                        <button class="btn btn-rounded btn-alt-warning min-width-125">ACTUALIZAR</button>
+                        </a>
+                    </div><br>
+                    <div>
+                        <a routerLink="/admin/prospects/people/quoting/car/invoice/{{userId}}/{{quotation.quotation_id}}">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">VER COTIZACIÓN</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Cotizaciones -->
+
+    <!-- Datos Prospecto -->
+    <div class="block">
+        <div class="block-header block-header-default">
+             <h3 class="block-title"><strong>INFORMACIÓN PERSONAL</strong></h3>
+                <div class="block-options">
+                    <a href="prospectos_personas_cotizador_actualizar.html">
+                    <button type="button" class="btn btn-alt-warning mr-5 mb-5">
+                        <i class="fa fa-pencil-square-o mr-5"></i>ACTUALIZAR
+                    </button></a>
+                </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <!-- Datos de Control -->
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sea">
+                    <h3 class="block-title"><strong>DATOS DE CONTROL</strong></h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                            <i class="si si-refresh"></i>
+                        </button>
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                    </div>
+                </div>
+
+                <div class="block-content">
+                    <div class="row text-center">
+                        <div class="col-sm-6">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.client_id}}</label>
+                                    <div class="col-12 font-size-sm text-muted">ID INTERNO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">AAA+</label>
+                                    <div class="col-12 font-size-sm text-muted">CALIDAD</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-sm-6">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.source_name}}</label>
+                                    <div class="col-12 font-size-sm text-muted">CANAL</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.register_date_formated}}</label>
+                                    <div class="col-12 font-size-sm text-muted">REGISTRO</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Datos del Conductor -->
+        </div>
+        <div class="col-lg-8">
+            <!-- Datos del Vehículo -->
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sea">
+                    <h3 class="block-title"><strong>DATOS DEL PROSPECTO</strong></h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                            <i class="si si-refresh"></i>
+                        </button>
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                    </div>
+                </div>
+
+                <div class="block-content">
+                    <div class="row text-center">
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.name}}</label>
+                                    <div class="col-12 font-size-sm text-muted">NOMBRE (S)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.name_paternal}}</label>
+                                    <div class="col-12 font-size-sm text-muted">APELLIDO PATERNO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.name_maternal}}</label>
+                                    <div class="col-12 font-size-sm text-muted">APELLIDO MATERNO</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{(user.gender == '1') ? 'HOMBRE' : 'MUJER'}}</label>
+                                    <div class="col-12 font-size-sm text-muted">GÉNERO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.email}}</label>
+                                    <div class="col-12 font-size-sm text-muted">CORREO ELECTRÓNICO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.cel}}</label>
+                                    <div class="col-12 font-size-sm text-muted">CELULAR</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /Datos del Vehículo -->
+        </div>
+    </div>
+
+    <!-- Referencias de Contacto -->
+    <div class="block">
+        <div class="block-header block-header-default">
+             <h3 class="block-title"><strong>REFERENCIAS PERSONALES</strong></h3>
+                <div class="block-options">
+                </div>
+        </div>
+    </div>
+    <!-- Datos del Agente -->
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sea">
+                    <h3 class="block-title"><strong>DATOS DEL AGENTE</strong></h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                            <i class="si si-refresh"></i>
+                        </button>
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                    </div>
+                </div>
+
+                <div class="block-content">
+                    <div class="row text-center">
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{agent.agent_id}}</label>
+                                    <div class="col-12 font-size-sm text-muted">ID AGENTE</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{agent.name}}</label>
+                                    <div class="col-12 font-size-sm text-muted">NOMBRE (S)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{agent.name_paternal}}</label>
+                                    <div class="col-12 font-size-sm text-muted">APELLIDO PATERNO</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{(user.gender == '1') ? 'HOMBRE' : 'MUJER'}}</label>
+                                    <div class="col-12 font-size-sm text-muted">GÉNERO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{agent.email}}</label>
+                                    <div class="col-12 font-size-sm text-muted">CORREO ELECTRÓNICO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{agent.cel}}</label>
+                                    <div class="col-12 font-size-sm text-muted">CELULAR</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /Datos del Vehículo -->
+    <!-- Referencias de Contacto -->
+
+    <!-- Articles -->
+    <!--<div class="block">
+        <div class="block-header block-header-default">
+             <h3 class="block-title"><strong>DOCUMENTOS GUARDADOS</strong></h3>
+                <div class="block-options">
+                </div>
+        </div>
+    </div>-->
+
+    <!-- Block Tabs Alternative Style -->
+            <!--<div class="block">
+                <ul class="nav nav-tabs nav-tabs-alt" data-toggle="tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#btabs-alt-static-personales">PERSONALES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#btabs-alt-static-vehiculos">VEHÍCULOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#btabs-alt-static-propiedades">PROPIEDADES</a>
+                    </li>
+                </ul>
+                <div class="block-content tab-content">
+                    <div class="tab-pane active" id="btabs-alt-static-personales" role="tabpanel">
+                        <table class="table table-borderless table-vcenter">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 50px;"></th>
+                        <th>DOCUMENTO</th>
+                        <th class="d-none d-sm-table-cell" style="width: 15%;">ESTATUS</th>
+                        <th class="text-center" style="width: 100px;">ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="text-center" scope="row">1</th>
+                        <td>IDENTIFICACIÓN OFICIAL</td>
+                        <td class="d-none d-sm-table-cell">
+                            <span class="badge badge-success">APROBADO</span>
+                        </td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Descargar">
+                                    <i class="fa fa-download"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row">2</th>
+                        <td>COMPROBANTE DE DOMICILIO</td>
+                        <td class="d-none d-sm-table-cell">
+                            <span class="badge badge-warning">PENDIENTE</span>
+                        </td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="" data-original-title="Descargar">
+                                    <i class="fa fa-download"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row">3</th>
+                        <td>CÉDULA RFC</td>
+                        <td class="d-none d-sm-table-cell">
+                            <span class="badge badge-success">APROBADO</span>
+                        </td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="" data-original-title="Descargar">
+                                    <i class="fa fa-download"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row">4</th>
+                        <td>CÉDULA CURP</td>
+                        <td class="d-none d-sm-table-cell">
+                            <span class="badge badge-success">APROBADO</span>
+                        </td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="" data-original-title="Descargar">
+                                    <i class="fa fa-download"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+                    </div>
+                    <div class="tab-pane" id="btabs-alt-static-vehiculos" role="tabpanel">
+                        <h4 class="font-w400">Sin Documentos</h4>
+                        <p>...</p>
+                    </div>
+                    <div class="tab-pane" id="btabs-alt-static-propiedades" role="tabpanel">
+                        <h4 class="font-w400">Sin Documentos</h4>
+                        <p>...</p>
+                    </div>
+                    <div class="tab-pane" id="btabs-alt-static-settings" role="tabpanel">
+                        <h4 class="font-w400">CONFIGURACION DE DOCUMENTOS</h4>
+                        <p>...</p>
+                    </div>
+                </div>
+            </div>-->
+    <!-- END Block Tabs Alternative Style -->
+
+    <!-- END Articles -->
+</div>
+<!-- END Page Content -->

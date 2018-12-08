@@ -1,0 +1,401 @@
+<!-- User Info -->
+<div class="bg-image bg-image-bottom" style="background-image: url('assets/img/photos/photo13@2x.jpg');">
+    <div class="bg-primary-dark-op py-30">
+        <div class="content content-full text-center">
+            <!-- Avatar -->
+            <div class="mb-15">
+                <a class="img-link" href="be_pages_generic_profile.html">
+                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="assets/img/avatars/avatar15.jpg" alt="">
+                </a>
+            </div>
+            <!-- END Avatar -->
+
+            <!-- Personal -->
+            <h1 class="h3 text-white font-w700 mb-25">{{user.name+' '+user.name_paternal+' '+user.name_maternal}}</h1>
+            <!-- Personal -->
+        </div>
+    </div>
+</div>
+<!-- END User Info -->
+
+<!-- Main Content -->
+<div class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Estatus de Cotización -->
+            <div class="block block-themed">
+                <div class="block-header bg-gd-aqua">
+                    <h3 class="block-title"><strong>ESTATUS DE COTIZACIÓN</strong></h3>
+                </div>
+
+                <div class="block-content text-center">
+                    <div class="col-lg-12 mb-10">
+                        <a routerLink="/admin/prospects/people/quoting/car/invoice/acept/{{user.client_id}}/{{quotation.quotation_id}}">
+                        <button type="button" class="btn btn-alt-success mr-5 mb-5">
+                            <i class="fa fa-check-square-o mr-5"></i>ACEPTADA
+                        </button></a>
+                        <a routerLink="/admin/prospects/people/quoting/car/costs/{{user.client_id}}/{{quotation.quotation_id}}">
+                        <button type="button" class="btn btn-alt-primary mr-5 mb-5">
+                            <i class="fa fa-send-o mr-5"></i>ENVIAR
+                        </button></a>
+                        <a href="prospectos_personas_cotizador_cancelar.html">
+                        <button type="button" class="btn btn-alt-danger mr-5 mb-5">
+                            <i class="fa fa-exclamation-triangle mr-5"></i>CANCELADA
+                        </button></a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /Estatus de Cotización -->
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="block-header block-header-default">
+             <h3 class="block-title"><strong>DATOS DE COTIZACIÓN</strong></h3>
+                <div class="block-options">
+                    <a routerLink="/admin/prospects/people/quoting/car/update/data/{{user.client_id}}/{{quotation.quotation_id}}">
+                    <button type="button" class="btn btn-alt-warning mr-5 mb-5" data-toggle="tooltip" data-placement="top" title="Actualizar">
+                        <i class="fa fa-pencil-square-o mr-5"></i>
+                    </button></a>
+                    <a routerLink="." target="_blank">
+                    <button type="button" class="btn btn-alt-info mr-5 mb-5" data-toggle="tooltip" data-placement="top" title="Enviar Link">
+                        <i class="fa fa-share-square-o mr-5"></i>
+                    </button></a>
+                    <a routerLink=".">
+                    <button type="button" class="btn btn-alt-secondary mr-5 mb-5" data-toggle="tooltip" data-placement="top" title="Enviar Correo">
+                        <i class="fa fa-envelope-o mr-5"></i>
+                    </button></a>
+                </div>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="col-lg-6">
+                <!-- Datos del Conductor -->
+                <div class="block block-themed">
+                    <div class="block-header bg-gd-aqua">
+                        <h3 class="block-title"><strong>DATOS DEL CONDUCTOR</strong></h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                                <i class="si si-refresh"></i>
+                            </button>
+                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="block-content">
+                        <div class="row text-center">
+                            <div class="col-sm-4">
+                                <div class="block">
+                                    <div class="form-group text-center">
+                                        <label class="col-12">{{quotation.name}}</label>
+                                        <div class="col-12 font-size-sm text-muted">NOMBRE (S)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block">
+                                    <div class="form-group text-center">
+                                        <label class="col-12">{{quotation.name_paternal}}</label>
+                                        <div class="col-12 font-size-sm text-muted">APELLIDO PATERNO</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block">
+                                    <div class="form-group text-center">
+                                        <label class="col-12">{{quotation.name_maternal}}</label>
+                                        <div class="col-12 font-size-sm text-muted">APELLIDO MATERNO</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row text-center">
+                            <div class="col-sm-4">
+                                <div class="block">
+                                    <div class="form-group text-center">
+                                        <label class="col-12">{{(quotation.gender == 1) ? 'MASCULINO' : 'FEMENINO' }}</label>
+                                        <div class="col-12 font-size-sm text-muted">GÉNERO</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block">
+                                    <div class="form-group text-center">
+                                        <label class="col-12">{{quotation.birthdate_formated}}</label>
+                                        <div class="col-12 font-size-sm text-muted">NACIMIENTO</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block">
+                                    <div class="form-group text-center">
+                                        <label class="col-12">{{quotation.zip_code}}</label>
+                                        <div class="col-12 font-size-sm text-muted">CÓDIGO POSTAL</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Datos del Conductor -->
+            </div>
+
+            <div class="col-lg-6">
+                <!-- Datos del Vehículo -->
+                <div class="block block-themed">
+                    <div class="block-header bg-gd-aqua">
+                        <h3 class="block-title"><strong>DATOS DEL VEHÍCULO</strong></h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                                <i class="si si-refresh"></i>
+                            </button>
+                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="block-content">
+                        <div class="row text-center">
+                            <div class="col-sm-4">
+                                <div class="block">
+                                    <div class="form-group text-center">
+                                        <label class="col-12">{{quotation.car_plate}}</label>
+                                        <div class="col-12 font-size-sm text-muted">PLACAS VEHÍCULO</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block">
+                                    <div class="form-group text-center">
+                                        <label class="col-12">{{quotation.car_make}}</label>
+                                        <div class="col-12 font-size-sm text-muted">MARCA</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block">
+                                    <div class="form-group text-center">
+                                        <label class="col-12">{{quotation.car_model}}</label>
+                                        <div class="col-12 font-size-sm text-muted">MODELO</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row text-center">
+                            <div class="col-sm-4">
+                                <div class="block">
+                                    <div class="form-group text-center">
+                                        <label class="col-12">{{quotation.car_year}}</label>
+                                        <div class="col-12 font-size-sm text-muted">AÑO</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block">
+                                    <div class="form-group text-center">
+                                        <label class="col-12">{{quotation.car_type}}</label>
+                                        <div class="col-12 font-size-sm text-muted">TIPO</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block">
+                                    <div class="form-group text-center">
+                                        <label class="col-12">{{quotation.car_transmission}}</label>
+                                        <div class="col-12 font-size-sm text-muted">TRANSMISIÓN</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /Datos del Vehículo -->
+            </div>
+    </div>
+
+    <div class="block">
+        <div class="block-header block-header-default">
+             <h3 class="block-title"><strong>DETALLES DE COTIZACIÓN</strong></h3>
+                <div class="block-options">
+                    <a routerLink="/admin/prospects/people/quoting/car/update/coverage/{{user.client_id}}/{{quotation.quotation_id}}">
+                    <button type="button" class="btn btn-alt-warning mr-5 mb-5" data-toggle="tooltip" data-placement="top" title="Actualizar">
+                        <i class="fa fa-pencil-square-o mr-5"></i>
+                    </button></a>
+                    <a routerLink="." target="_blank">
+                    <button type="button" class="btn btn-alt-info mr-5 mb-5" data-toggle="tooltip" data-placement="top" title="Enviar Link">
+                        <i class="fa fa-share-square-o mr-5"></i>
+                    </button></a>
+                    <a routerLink=".">
+                    <button type="button" class="btn btn-alt-secondary mr-5 mb-5" data-toggle="tooltip" data-placement="top" title="Enviar Correo">
+                        <i class="fa fa-envelope-o mr-5"></i>
+                    </button></a>
+                </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Bootstrap Login -->
+            <div class="block block-themed">
+                <div class="block-header bg-gd-aqua">
+                    <h3 class="block-title"><strong>DATOS DE COBERTURA</strong></h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                            <i class="si si-refresh"></i>
+                        </button>
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                    </div>
+                </div>
+
+                <div class="block-content">
+                    <div class="row text-center">
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">SI</label>
+                                    <div class="col-12 font-size-sm text-muted">ROBO TOTAL</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{(quotation.partial_theft == 2) ? 'SI' : 'NO'}}</label>
+                                    <div class="col-12 font-size-sm text-muted">ROBO PARCIAL</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{quotation.in_goods}}</label>
+                                    <div class="col-12 font-size-sm text-muted">PROTECCIÓN BIENES</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{quotation.in_person}}</label>
+                                    <div class="col-12 font-size-sm text-muted">PROTECCIÓN PERSONAS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{(quotation.extension_responsibility == 2) ? 'SI' : 'NO'}}</label>
+                                    <div class="col-12 font-size-sm text-muted">EXT. RESPONSABILIDAD</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{quotation.material_damage}}%</label>
+                                    <div class="col-12 font-size-sm text-muted">DAÑOS MATERIALES</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{(quotation.mandatory_responsibility == 2) ? 'SI' : 'NO'}}</label>
+                                    <div class="col-12 font-size-sm text-muted">EXT. ESTRANJERO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{(quotation.tire_insurance == 2) ? 'SI' : 'NO'}}</label>
+                                    <div class="col-12 font-size-sm text-muted">SEGURO LLANTAS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{(quotation.third_without_insurance == 2) ? 'SI' : 'NO'}}</label>
+                                    <div class="col-12 font-size-sm text-muted">ROTURA DE CRISTALES</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">SI</label>
+                                    <div class="col-12 font-size-sm text-muted">DEFENSA LEGAL</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{quotation.for_occupants}}</label>
+                                    <div class="col-12 font-size-sm text-muted">G. MÉDICOS OCUPANTES</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{(quotation.road_aid == 2) ? 'SI' : 'NO'}}</label>
+                                    <div class="col-12 font-size-sm text-muted">AUXILIO VIAL</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{quotation.auto_substitute}}</label>
+                                    <div class="col-12 font-size-sm text-muted">AUTO SUSTITUTO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{(quotation.primax == 2) ? 'SI' : 'NO'}}</label>
+                                    <div class="col-12 font-size-sm text-muted">DEVOLUCIÓN PRIMA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{(quotation.special_team == 2) ? 'SI' : 'NO'}}</label>
+                                <div class="col-12 font-size-sm text-muted">EQUIPO ESPECIAL</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12"></label>
+                                    <div class="col-12 font-size-sm text-muted"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Bootstrap Login -->
+        </div>
+    </div>
+
+</div>
+<!-- END Page Content -->

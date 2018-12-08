@@ -1,0 +1,59 @@
+<!-- Hero -->
+<div class="bg-image bg-image-bottom" style="background-image: url('assets/img/photos/photo34@2x.jpg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-top text-center overflow-hidden">
+            <div class="pt-50 pb-20">
+                <h1 class="font-w700 text-white mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp">Clientes</h1>
+                <h2 class="h4 font-w400 text-white-op invisible" data-toggle="appear" data-class="animated fadeInUp">Lista de Clientes Individuales</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<!-- Page Content -->
+<div class="content row">
+
+    <div class="col-md-6 col-xl-3" *ngFor="let client of clients">
+        <div class="block text-center">
+            <div class="block-content block-content-full block-sticky-options pt-30">
+                <div class="block-options">
+                    <div class="dropdown">
+                        <button type="button" class="btn-block-option" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-fw fa-ellipsis-v"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(27px, 29px, 0px);">
+                            <a class="dropdown-item" routerLink="." (click)="onChangeToProspect(client.client_id)">
+                                <i class="fa fa-fw fa-user mr-5"></i>Cambiar a Prospecto
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" routerLink=".">
+                                <i class="fa fa-fw fa-pencil-square-o mr-5"></i>Editar Datos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <img class="img-avatar" src="assets/img/avatars/avatar3.jpg" alt="">
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light">
+                <div class="font-w600 mb-5">{{client.name+' '+client.name_paternal}}</div>
+                <div class="font-size-sm mb-10">AAA+</div>
+                <a routerLink="/admin/clients/people/profile/{{client.client_id}}"><button type="button" class="btn btn-rounded btn-alt-primary min-width-125">Ver Perfil</button></a>
+            </div>
+            <div class="block-content">
+                <div class="row items-push">
+                    <div class="col-6">
+                        <div class="mb-5"><i class="si si-wallet fa-2x"></i></div>
+                        <div class="font-size-sm text-muted">$00.00</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-5"><i class="si si-layers fa-2x"></i></div>
+                        <div class="font-size-sm text-muted">1 Pólizas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- END Page Content -->

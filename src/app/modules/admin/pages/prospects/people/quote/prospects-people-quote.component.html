@@ -1,0 +1,347 @@
+<!-- User Info -->
+<div class="bg-image bg-image-bottom" style="background-image: url('assets/img/photos/photo13@2x.jpg');">
+    <div class="bg-primary-dark-op py-30">
+        <div class="content content-full text-center">
+            <!-- Avatar -->
+            <div class="mb-15">
+                <a class="img-link" href="be_pages_generic_profile.html">
+                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="assets/img/avatars/avatar15.jpg" alt="">
+                </a>
+            </div>
+            <!-- END Avatar -->
+
+            <!-- Personal -->
+            <h1 class="h3 text-white font-w700 mb-25">{{user.name+' '+user.name_paternal+' '+user.name_maternal}}</h1>
+            <!-- Personal -->
+        </div>
+    </div>
+</div>
+<!-- END User Info -->
+
+<!-- Main Content -->
+<div class="content">
+    <!-- Catálogo de Seguros -->
+    <div class="block">
+        <div class="block-header block-header-default">
+             <h3 class="block-title"><strong>SELECCIONAR TIPO DE SEGURO</strong></h3>
+                <div class="block-options">
+                    <a routerLink="/admin/prospects/people/profile/1">
+                    <button type="button" class="btn btn-alt-danger mr-5 mb-5">
+                        <i class="fa fa-close mr-5"></i>CANCELAR
+                    </button></a>
+                </div>
+        </div>
+    </div>
+    <div class="row items-push">
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-pulse text-danger-light mx-auto my-20">
+                        <i class="fa fa-car"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">SEGURO DE AUTO</div>
+                    <div class="font-size-sm text-muted">USO PARTICULAR</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a (click)="onQuoteCar()">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-elegance text-danger-light mx-auto my-20">
+                        <i class="fa fa-motorcycle"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">SEGURO DE MOTO</div>
+                    <div class="font-size-sm text-muted">USO PARTICULAR</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador_moto.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-default text-danger-light mx-auto my-20">
+                        <i class="fa fa-truck"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">SEGURO DE CAMIÓN</div>
+                    <div class="font-size-sm text-muted">USO PARTICULAR</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador_camion.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-flat text-danger-light mx-auto my-20">
+                        <i class="fa fa-bus"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">TRANSPORTES</div>
+                    <div class="font-size-sm text-muted">PERSONA FÍSICA</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador_transportes.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-corporate text-danger-light mx-auto my-20">
+                        <i class="fa fa-plane"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">AVIACIÓN</div>
+                    <div class="font-size-sm text-muted">PERSONA FÍSICA</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-earth text-danger-light mx-auto my-20">
+                        <i class="fa fa-heartbeat"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">SEGURO DE VIDA</div>
+                    <div class="font-size-sm text-muted">PROTECCIÓN PERSONAL</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-default text-danger-light mx-auto my-20">
+                        <i class="fa fa-medkit"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">GASTOS MÉDICOS MAYORES</div>
+                    <div class="font-size-sm text-muted">PROTECCIÓN PERSONAL</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-elegance text-danger-light mx-auto my-20">
+                        <i class="fa fa-hospital-o"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">ACCIDENTES PERSONALES</div>
+                    <div class="font-size-sm text-muted">PROTECCIÓN PERSONAL</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-pulse text-danger-light mx-auto my-20">
+                        <i class="fa fa-ship"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">VIAJERO</div>
+                    <div class="font-size-sm text-muted">PROTECCIÓN PERSONAL</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-flat text-danger-light mx-auto my-20">
+                        <i class="fa fa-exclamation-triangle"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">CRISIS</div>
+                    <div class="font-size-sm text-muted">PROTECCIÓN PERSONAL</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-corporate text-danger-light mx-auto my-20">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">RESP. CIVIL PROFESIONAL</div>
+                    <div class="font-size-sm text-muted">PROTECCIÓN PERSONAL</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-earth text-danger-light mx-auto my-20">
+                        <i class="fa fa-home"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">SEGURO HOGAR</div>
+                    <div class="font-size-sm text-muted">PROTECCIÓN PATRIMONIAL</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador_hogar.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-default text-danger-light mx-auto my-20">
+                        <i class="fa fa-group"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">EQUIPO DE CONTRATISTAS</div>
+                    <div class="font-size-sm text-muted">PERSONA FÍSICA</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-elegance text-danger-light mx-auto my-20">
+                        <i class="fa fa-group"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">RESP. CIVIL CONTRATISTAS</div>
+                    <div class="font-size-sm text-muted">PERSONA FÍSICA</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                <div class="block-content block-content-full">
+                    <div class="item item-circle bg-gd-pulse text-danger-light mx-auto my-20">
+                        <i class="fa fa-industry"></i>
+                    </div>
+                </div>
+                <div class="block-content block-content-full block-content-sm bg-body-light">
+                    <div class="font-w600 mb-5">EMPRESARIAL</div>
+                    <div class="font-size-sm text-muted">PERSONA FÍSICA</div>
+                </div>
+                <div class="block-content block-content-full">
+                    <div>
+                        <a href="prospectos_personas_cotizador.html">
+                        <button class="btn btn-rounded btn-alt-info min-width-125">COTIZAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Catálogo de Seguros -->
+
+    <div class="row">
+
+    </div>
+
+</div>
+<!-- END Page Content -->

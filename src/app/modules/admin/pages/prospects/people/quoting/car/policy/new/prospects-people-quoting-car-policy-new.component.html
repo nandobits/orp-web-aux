@@ -1,0 +1,229 @@
+<!-- Hero -->
+<div class="bg-image bg-image-bottom" style="background-image: url('assets/img/photos/photo34@2x.jpg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-top text-center overflow-hidden">
+            <div class="pt-50 pb-20">
+                <h1 class="font-w700 text-white mb-10" data-toggle="appear" data-class="animated fadeInUp">Clientes</h1>
+                <h2 class="h4 font-w400 text-white-op" data-toggle="appear" data-class="animated fadeInUp">Alta de Póliza Aceptada</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<div class="content">
+
+    <!-- Referencias de Contacto -->
+    <div class="block">
+        <div class="block-header block-header-default">
+             <h3 class="block-title"><strong>DETALLES DE LA PÓLIZA</strong></h3>
+                <div class="block-options">
+                    <button type="button" class="btn btn-alt-success mr-5 mb-5" (click)="savePolicy()">
+                        <i class="fa fa-save mr-5"></i>GUARDAR
+                    </button>
+                </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <!-- Cargar Póliza -->
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sea">
+                    <h3 class="block-title"><strong>CARGAR PÓLIZA</strong></h3>
+                </div>
+
+                <div class="block-content">
+                    <div class="row text-center">
+                        <div class="col-sm-12">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <form method="post" id="form_policy" enctype="multipart/form-data">
+                                        <input type="file" name="orp_policy" id="orp_policy" accept="application/pdf" style="display:none" (change)="onUploadQuotation()">
+                                    </form>
+                                    <button type="button" class="btn btn-alt-primary min-width-125" data-toggle="tooltip" title="Seleccionar Póliza" (click)="onSelectPolicy()">SELECCIONAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /Cargar Póliza -->
+            <!-- Detalles Póliza -->
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sea">
+                    <h3 class="block-title"><strong>DETALLES DE PÓLIZA</strong></h3>
+                </div>
+
+                <div class="block-content">
+                            <div class="form-group row col-12">
+                                    <label>NO. PÓLIZA</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="policy_num" placeholder="12345678" [(ngModel)]="policy.policy_num">
+                                    </div>
+                                </div>
+                                <div class="form-group row col-12">
+                                    <label>NO. DE CLIENTE</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="policy_client_num" placeholder="1234QWERTY" [(ngModel)]="policy.policy_client_num">
+                                    </div>
+                                </div>
+                                <div class="form-group row col-12">
+                                    <label>FECHA DE APLICACIÓN</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="application_date" placeholder="2018-08-08" [(ngModel)]="policy.application_date">
+                                    </div>
+                                </div>
+                                <div class="form-group row col-12">
+                                    <label>PAGO TOTAL</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-usd"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" name="total" placeholder="10000" [(ngModel)]="policy.total">
+                                    </div>
+                                </div>
+                        </div>
+
+            </div>
+            <!-- /Detalles Póliza -->
+        </div>
+
+        <div class="col-lg-8">
+            <!-- Datos del Vehículo -->
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sea">
+                    <h3 class="block-title"><strong>DATOS DE LA PÓLIZA</strong></h3>
+                </div>
+
+                <div class="block-content">
+                    <div class="row text-center">
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{quotationAccepted.insurer}}</label>
+                                    <div class="col-12 font-size-sm text-muted">ASEGURADORA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{quotationAccepted.type_pay}}</label>
+                                    <div class="col-12 font-size-sm text-muted">TIPO DE PAGO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{quotationAccepted.type_plan}}</label>
+                                    <div class="col-12 font-size-sm text-muted">TIPO DE PLAN</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{quotation.car_make}}</label>
+                                    <div class="col-12 font-size-sm text-muted">MARCA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{quotation.car_model}}</label>
+                                    <div class="col-12 font-size-sm text-muted">MODELO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{quotation.car_year}}</label>
+                                    <div class="col-12 font-size-sm text-muted">AÑO</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /Datos del Vehículo -->
+
+            <!-- Datos del Vehículo -->
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sea">
+                    <h3 class="block-title"><strong>DATOS DEL CLIENTE</strong></h3>
+                </div>
+
+                <div class="block-content">
+                    <div class="row text-center">
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.name}}</label>
+                                    <div class="col-12 font-size-sm text-muted">NOMBRE (S)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.name_paternal}}</label>
+                                    <div class="col-12 font-size-sm text-muted">APELLIDO PATERNO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.name_maternal}}</label>
+                                    <div class="col-12 font-size-sm text-muted">APELLIDO MATERNO</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{(user.gender == 1) ? 'MASCULINO' : 'FEMENINO'}}</label>
+                                    <div class="col-12 font-size-sm text-muted">GÉNERO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.email}}</label>
+                                    <div class="col-12 font-size-sm text-muted">CORREO ELECTRÓNICO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="block">
+                                <div class="form-group text-center">
+                                    <label class="col-12">{{user.cel}}</label>
+                                    <div class="col-12 font-size-sm text-muted">CELULAR</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /Datos del Vehículo -->
+        </div>
+
+    </div>
+
+</div>

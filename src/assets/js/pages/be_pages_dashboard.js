@@ -114,4 +114,4 @@ var BePagesDashboard = function() {
 }();
 
 // Initialize when page loads
-jQuery(function(){ BePagesDashboard.init(); });
+/*jQuery(function(){ BePagesDashboard.init(); });*/

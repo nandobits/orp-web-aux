@@ -1,0 +1,173 @@
+<!-- Page Content -->
+<!-- User Info -->
+<div class="bg-image bg-image-bottom" style="background-image: url('assets/img/photos/photo13@2x.jpg');">
+    <div class="bg-primary-dark-op py-30">
+        <div class="content content-full text-center">
+            <!-- Avatar -->
+            <div class="mb-15">
+                <a class="img-link" href="be_pages_generic_profile.html">
+                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="assets/img/avatars/avatar15.jpg" alt="">
+                </a>
+            </div>
+            <!-- Avatar -->
+
+            <!-- Personal -->
+            <h1 class="h3 text-white font-w700 mb-25">Spider Man</h1>
+            <!-- Personal -->
+        </div>
+    </div>
+</div>
+<!-- User Info -->
+
+<div class="content">
+
+    <div class="block">
+        <div class="block-header block-header-default">
+             <h3 class="block-title"><strong>MOVIMIENTOS REALIZADOS</strong></h3>
+                <div class="block-options">
+                    <a routerLink="/admin/clients/people/profile/{{userId}}">
+                    <button type="button" class="btn btn-alt-info mr-5 mb-5">
+                        <i class="fa fa-id-card-o mr-5"></i>VER PERFIL
+                    </button></a>
+                </div>
+        </div>
+    </div>
+
+    <div class="block block-themed">
+        <div class="block-header bg-gd-sea">
+            <h3 class="block-title"><strong>PÓLIZAS RENOVADAS</strong></h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo"><i class="si si-refresh"></i>
+                    </button>
+                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                </div>
+        </div>
+            <div class="block-content">
+                <div class="row text-center">
+                    <div class="col-sm-12">
+                        <!-- Lista de Pólizas -->
+                        <div class="block">
+                            <div class="block-content block-content-full">
+                                <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"></th>
+                                            <th>PÓLIZA ANTERIOR</th>
+                                            <th>PÓLIZA NUEVA</th>
+                                            <th>TIPO DE SEGURO</th>
+                                            <th class="d-none d-sm-table-cell text-center" style="width: 30%;">FECHA Y HORA</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ng-container *ngFor="let policy of policies; let index = index">
+                                            <tr *ngIf="policy.status == 2">
+                                                <td class="text-center">{{index + 1}}</td>
+                                                <td class="text-center"><a href="{{policy.original_policy_url}}" target="_blank">{{policy.original_policy_num}}</a></td>
+                                                <td class="text-center"><a href="{{policy.policy_url}}" target="_blank">{{policy.policy_num}}</a></td>
+                                                <td class="text-center">SEGURO DE AUTO</td>
+                                                <td class="d-none d-sm-table-cell text-center">{{policy.register_date}}</td>
+                                            </tr>
+                                        </ng-container>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- //Lista de Pólizas -->
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="block block-themed">
+        <div class="block-header bg-gd-sea">
+            <h3 class="block-title"><strong>PÓLIZAS ENDOSADAS</strong></h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo"><i class="si si-refresh"></i>
+                    </button>
+                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                </div>
+        </div>
+            <div class="block-content">
+                <div class="row text-center">
+                    <div class="col-sm-12">
+                        <!-- Lista de Pólizas -->
+                        <div class="block">
+                            <div class="block-content block-content-full">
+                                <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"></th>
+                                            <th>PÓLIZA ORIGINAL</th>
+                                            <th>ENDOSO APLICADO</th>
+                                            <th>TIPO DE SEGURO</th>
+                                            <th class="d-none d-sm-table-cell text-center" style="width: 30%;">FECHA Y HORA</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ng-container *ngFor="let policy of policies; let index = index">
+                                            <tr *ngIf="policy.status == 3">
+                                                <td class="text-center">{{index + 1}}</td>
+                                                <td class="text-center"><a href="{{policy.original_policy_url}}" target="_blank">{{policy.original_policy_num}}</a></td>
+                                                <td class="text-center"><a href="{{policy.policy_url}}" target="_blank">{{policy.policy_num}}</a></td>
+                                                <td class="text-center">SEGURO DE AUTO</td>
+                                                <td class="d-none d-sm-table-cell text-center">{{policy.register_date}}</td>
+                                            </tr>
+                                        </ng-container>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- //Lista de Pólizas -->
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="block block-themed">
+        <div class="block-header bg-gd-sea">
+            <h3 class="block-title"><strong>PÓLIZAS CANCELADAS</strong></h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo"><i class="si si-refresh"></i>
+                    </button>
+                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                </div>
+        </div>
+            <div class="block-content">
+                <div class="row text-center">
+                    <div class="col-sm-12">
+                        <!-- Lista de Pólizas -->
+                        <div class="block">
+                            <div class="block-content block-content-full">
+                                <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"></th>
+                                            <th>PÓLIZA ORIGINAL</th>
+                                            <th>MOTIVO DE CANCELACIÓN</th>
+                                            <th>TIPO DE SEGURO</th>
+                                            <th class="d-none d-sm-table-cell text-center" style="width: 30%;">FECHA Y HORA</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ng-container *ngFor="let policy of policies; let index = index">
+                                            <tr *ngIf="policy.status == 4">
+                                                <td class="text-center">{{index + 1}}</td>
+                                                <td class="text-center"><a href="{{policy.original_policy_url}}" target="_blank">{{policy.original_policy_num}}</a></td>
+                                                <td class="text-center">{{policy.reason_cancellation}}</td>
+                                                <td class="text-center">SEGURO DE AUTO</td>
+                                                <td class="d-none d-sm-table-cell text-center">{{policy.register_date}}</td>
+                                            </tr>
+                                        </ng-container>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- //Lista de Pólizas -->
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</div>
+<!-- END Main Content -->
+<!-- END Page Content -->

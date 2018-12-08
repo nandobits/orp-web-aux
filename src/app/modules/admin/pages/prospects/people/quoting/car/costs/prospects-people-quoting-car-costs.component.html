@@ -1,0 +1,59 @@
+<!-- User Info -->
+<div class="bg-image bg-image-bottom" style="background-image: url('assets/img/photos/photo13@2x.jpg');">
+    <div class="bg-primary-dark-op py-30">
+        <div class="content content-full text-center">
+            <!-- Avatar -->
+            <div class="mb-15">
+                <a class="img-link" href="be_pages_generic_profile.html">
+                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="assets/img/avatars/avatar15.jpg" alt="">
+                </a>
+            </div>
+            <!-- END Avatar -->
+
+            <!-- Personal -->
+            <h1 class="h3 text-white font-w700 mb-25">{{user.name+' '+user.name_paternal+' '+user.name_maternal}}</h1>
+            <!-- Personal -->
+        </div>
+    </div>
+</div>
+<!-- END User Info -->
+
+<!-- Main Content -->
+<div class="content">
+    <div class="block">
+        <div class="block-header block-header-default">
+             <h3 class="block-title"><strong>{{quotation.car_make+' '+quotation.car_model+' '+quotation.car_year}}</strong></h3>
+                <div class="block-options">
+                </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6 col-xl-3" *ngFor="let insurer of insurers; let index = index">
+            <div class="block block-link-pop text-center {{insurer.class_name}}">
+                <div class="block-content block-content-full">
+                    <img class="img-avatar img-avatar-thumb" src="{{insurer.logo}}" alt="">
+                </div>
+                <div class="block-content block-content-full bg-black-op-5">
+                    <div class="font-w600 text-white mb-5">{{insurer.name}}</div>
+                    <input type="text" class="form-control" placeholder="ID DE COTIZACIÓN" [(ngModel)]="insurer.insurance_quotation_id">
+                </div>
+                <div class="block-content block-content-full">
+                    <form method="post" id="form_{{insurer.insurance_carrier_id}}" enctype="multipart/form-data">
+                        <input type="file" name="orp_{{insurer.insurance_carrier_id}}" id="orp_{{insurer.insurance_carrier_id}}" accept="application/pdf" style="display:none" (change)="onUploadQuotation(insurer.insurance_carrier_id, index)">
+                    </form>
+                    <button type="button" class="btn btn-circle btn-alt-info mr-5 mb-5 js-tooltip-enabled" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cargar Cotización" (click)="onSelectQuotation(insurer.insurance_carrier_id)">
+                        <i class="fa fa-upload"></i>
+                    </button>
+                    <button type="button" class="btn btn-circle btn-alt-success mr-5 mb-5 js-tooltip-enabled" data-toggle="tooltip" data-placement="top" title="" data-original-title="Guardar" (click)="onSaveQuotation(index)">
+                        <i class="fa fa-save"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- END Main Content -->

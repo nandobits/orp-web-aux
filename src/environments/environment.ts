@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost/atombits/proyectos/seguros-orp/api/index.php',
+  apiUrl: 'http://localhost/atombits/proyectos/seguros-orp/api/v1',
+  uploadDocumentsUrl: 'http://localhost/atombits/proyectos/seguros-orp/api/documents',
+  host: 'http://localhost',
 };
 
 /*

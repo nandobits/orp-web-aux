@@ -1,0 +1,14 @@
+<!-- Page Container -->
+<div id="page-container" class="sidebar-o sidebar-inverse side-scroll page-header-fixed page-header-glass page-header-inverse">
+    <app-sidebar></app-sidebar>
+    <app-navbar></app-navbar>
+    <!-- Main Container -->
+    <main id="main-container">
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
+    </main>
+    <!-- END Main Container -->
+    <!-- Footer -->
+    <app-footer></app-footer>
+    <!-- END Footer -->
+</div>
+<!-- END Page Container -->

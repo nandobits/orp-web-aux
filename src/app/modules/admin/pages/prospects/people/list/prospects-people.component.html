@@ -1,0 +1,119 @@
+<!-- Hero -->
+<div class="bg-image bg-image-bottom" style="background-image: url('assets/img/photos/photo34@2x.jpg');">
+    <div class="bg-primary-dark-op">
+        <div class="content content-top text-center overflow-hidden">
+            <div class="pt-50 pb-20">
+                <h1 class="font-w700 text-white mb-10 js-appear-enabled animated fadeInUp" data-toggle="appear" data-class="animated fadeInUp">Prospectos</h1>
+                <h2 class="h4 font-w400 text-white-op js-appear-enabled animated fadeInUp" data-toggle="appear" data-class="animated fadeInUp">Seguimiento a Clientes Potenciales</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+<!-- Page Content -->
+<div class="content">
+    <div class="row gutters-tiny js-appear-enabled animated fadeIn" data-toggle="appear">
+        <!-- Row #1 -->
+        <div class="col-6 col-xl-3">
+            <a class="block block-link-shadow text-right" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-left mt-10 d-none d-sm-block">
+                        <i class="si si-users fa-3x text-body-bg-dark"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600" data-toggle="countTo" data-speed="1000" data-to="50">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Prospectos</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-xl-3">
+            <a class="block block-link-shadow text-right" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-left mt-10 d-none d-sm-block">
+                        <i class="si si-wallet fa-3x text-body-bg-dark"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600">$<span data-toggle="countTo" data-speed="1000" data-to="7800">0</span></div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Proyección</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-xl-3">
+            <a class="block block-link-shadow text-right" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-left mt-10 d-none d-sm-block">
+                        <i class="si si-docs fa-3x text-body-bg-dark"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600" data-toggle="countTo" data-speed="1000" data-to="15">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Cotizaciones</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-xl-3">
+            <a class="block block-link-shadow text-right" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-left mt-10 d-none d-sm-block">
+                        <i class="si si-users fa-3x text-body-bg-dark"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600" data-toggle="countTo" data-speed="1000" data-to="2">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">En Revisión</div>
+                </div>
+            </a>
+        </div>
+        <!-- END Row #1 -->
+    </div>
+
+    <div class="row gutters-tiny js-appear-enabled animated fadeIn" data-toggle="appear">
+    <!-- Partial Table -->
+    <div class="block">
+        <div class="block-header block-header-default">
+            <h3 class="block-title">Lista de Prospectos</h3>
+            <div class="float-right">
+                <a routerLink="/admin/prospects/people/new">
+                <button type="button" class="btn btn-alt-success mr-5 mb-5">
+                <i class="fa fa-plus mr-5"></i>PROSPECTO</button>
+                </a>
+            </div>
+        </div>
+        <div class="block-content">
+            <p>En este listado se encuentran todos los prospectos interesados en dar de alta una póliza de seguro. Es muy importante <strong>actualizar el estatus</strong> de todos los prospectos para poder dar el seguimiento adecuado. Una vez que el prospecto cumpla con los documentos y acepte de cotización, pasará de manera automática al directorio de clientes.</p>
+            <table class="table table-striped table-vcenter">
+                <thead>
+                    <tr>
+                        <th class="text-center"><i class="si si-user"></i></th>
+                        <th>Nombre</th>
+                        <th class="d-none d-sm-table-cell">Teléfono</th>
+                        <th>Cotización</th>
+                        <th class="d-none d-sm-table-cell">Agente</th>
+                        <th class="d-none d-sm-table-cell">Estatus</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let prospect of prospects">
+                        <td class="text-center">{{prospect.client_id}}</td>
+                        <td class="font-w600">{{prospect.name+' '+prospect.name_paternal}}</td>
+                        <td class="d-none d-sm-table-cell">{{(prospect.cel) ? '+52 '+prospect.cel : ''}}</td>
+                        <td class="font-w600"></td>
+                        <td class="d-none d-md-table-cell">{{getAgentName(prospect.agent)}}</td>
+                        <td class="d-none d-md-table-cell">
+                            <span class="badge badge-info">Nuevo</span>
+                        </td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <a routerLink="/admin/prospects/people/profile/{{prospect.client_id}}"><button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Ver Prospecto">
+                                    <i class="fa fa-id-card-o"></i>
+                                </button></a>
+                                <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Eliminar" (click)="onDeleteProspects()">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- END Partial Table -->
+    </div>
+</div>
+<!-- END Page Content -->

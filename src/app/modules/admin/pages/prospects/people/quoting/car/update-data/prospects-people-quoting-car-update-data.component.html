@@ -1,0 +1,161 @@
+<!-- User Info -->
+<div class="bg-image bg-image-bottom" style="background-image: url('assets/img/photos/photo13@2x.jpg');">
+    <div class="bg-primary-dark-op py-30">
+        <div class="content content-full text-center">
+            <!-- Avatar -->
+            <div class="mb-15">
+                <a class="img-link" href="be_pages_generic_profile.html">
+                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="assets/img/avatars/avatar15.jpg" alt="">
+                </a>
+            </div>
+            <!-- END Avatar -->
+
+            <!-- Personal -->
+            <h1 class="h3 text-white font-w700 mb-25">{{user.name+' '+user.name_paternal+' '+user.name_maternal}}</h1>
+            <!-- Personal -->
+        </div>
+    </div>
+</div>
+<!-- END User Info -->
+
+<!-- Main Content -->
+<div class="content">
+    <div class="block">
+        <div class="block-header block-header-default">
+             <h3 class="block-title"><strong>ACTUALIZAR DATOS DE COTIZACIÓN</strong></h3>
+                <div class="block-options">
+                    <button type="button" class="btn btn-alt-success mr-5 mb-5" (click)="onSaveInfo()">
+                        <i class="fa fa-save mr-5"></i>GUARDAR
+                    </button>
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Bootstrap Login -->
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sun">
+                    <h3 class="block-title"><i class="fa fa-id-card-o mr-5"></i><strong>DATOS DEL CONDUCTOR</strong></h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                            <i class="si si-refresh"></i>
+                        </button>
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <form action="be_forms_premade.php" method="post" onsubmit="return false;">
+                        <div class="form-group row">
+                            <label class="col-12" for="register1-username">NOMBRE (S)</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="name" placeholder="SPIDER MAN" [(ngModel)]="quotation.name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12" for="register1-email">APELLIDO PATERNO</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="name_paternal" placeholder="SÚPER" [(ngModel)]="quotation.name_paternal">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12" for="register1-password">APELLIDO MATERNO</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="name_maternal" placeholder="HÉROE" [(ngModel)]="quotation.name_maternal">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12" for="register1-password2">GÉNERO</label>
+                            <div class="col-12">
+                                <select class="form-control" name="gender" [(ngModel)]="quotation.gender">
+                                    <option value="0">Seleccionar Género</option>
+                                    <option value="1">MASCULINO</option>
+                                    <option value="2">FEMENINO</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12" for="register1-password2">FECHA DE NACIMIENTO</label>
+                            <div class="col-12">
+                                <input type="text" class="js-datepicker form-control js-datepicker-enabled" name="birthdate" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd" [(ngModel)]="quotation.birthdate">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12" for="register1-password">CÓDIGO POSTAL</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="zip_code" placeholder="72000" [(ngModel)]="quotation.zip_code">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- END Bootstrap Login -->
+        </div>
+
+        <div class="col-md-6">
+            <!-- Bootstrap Login -->
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sun">
+                    <h3 class="block-title"><i class="fa fa-car mr-5"></i><strong>DATOS DEL VEHÍCULO</strong></h3>
+                    <div class="block-options">
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                            <i class="si si-refresh"></i>
+                        </button>
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <form action="be_forms_premade.php" method="post" onsubmit="return false;">
+                        <div class="form-group row">
+                            <label class="col-12" for="register1-username">PLACAS</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="car_plate" placeholder="0808FPC" [(ngModel)]="quotation.car_plate">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12" for="register1-username">MARCA</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="car_make" placeholder="TESLA" [(ngModel)]="quotation.car_make">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12" for="register1-email">MODELO</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="car_model" placeholder="MODEL S" [(ngModel)]="quotation.car_model">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12" for="register1-password">AÑO</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="car_year" placeholder="2018" [(ngModel)]="quotation.car_year">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12" for="register1-password2">TIPO DE VEHÍCULO</label>
+                            <div class="col-12">
+                                <select class="form-control" id="example-select" name="car_type" [(ngModel)]="quotation.car_type">
+                                    <option value="0">Seleccionar tipo de vehículo</option>
+                                    <option value="1">AUTO</option>
+                                    <option value="2">SUV</option>
+                                    <option value="3">PICKUP</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12" for="register1-password2">TRANSMISIÓN</label>
+                            <div class="col-12">
+                                <select class="form-control" id="example-select" name="car_transmission" [(ngModel)]="quotation.car_transmission">
+                                    <option value="0">Seleccionar transmision</option>
+                                    <option value="1">MANUAL</option>
+                                    <option value="2">AUTOMÁTICA</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- END Bootstrap Login -->
+        </div>
+    </div>
+
+</div>
+<!-- END Page Content -->

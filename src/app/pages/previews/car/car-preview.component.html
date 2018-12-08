@@ -1,0 +1,585 @@
+<!-- Page Container -->
+<div id="page-container" class="sidebar-mini side-scroll page-header-modern main-content-boxed">
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <!-- Sidebar Scroll Container -->
+        <div id="sidebar-scroll">
+            <!-- Sidebar Content -->
+            <div class="sidebar-content">
+                <!-- Side Header -->
+                <div class="content-header content-header-fullrow px-15">
+                    <!-- Mini Mode -->
+                    <div class="content-header-section sidebar-mini-visible-b">
+                        <!-- Logo -->
+                        <span class="content-header-item font-w700 font-size-xl float-left animated fadeIn">
+                            <span class="text-dual-primary-dark">ORP SEGUROS</span>
+                        </span>
+                        <!-- END Logo -->
+                    </div>
+                    <!-- END Mini Mode -->
+
+                    <!-- Normal Mode -->
+                    <div class="content-header-section text-center align-parent sidebar-mini-hidden">
+                        <!-- Close Sidebar, Visible only on mobile screens -->
+                        <!-- Layout API, functionality initialized in Codebase() -> uiApiLayout() -->
+                        <button type="button" class="btn btn-circle btn-dual-secondary d-lg-none align-v-r" data-toggle="layout" data-action="sidebar_close">
+                            <i class="fa fa-times text-danger"></i>
+                        </button>
+                        <!-- END Close Sidebar -->
+
+                        <!-- Logo -->
+                        <div class="content-header-item">
+                            <a class="link-effect font-w700" href="index.html">
+                                <span class="font-size-xl text-dual-primary-dark">ORP SEGUROS</span>
+                            </a>
+                        </div>
+                        <!-- END Logo -->
+                    </div>
+                    <!-- END Normal Mode -->
+                </div>
+                <!-- END Side Header -->
+
+                <!-- Side User -->
+                <div class="content-side content-side-full content-side-user px-10 align-parent">
+                    <!-- Visible only in mini mode -->
+                    <div class="sidebar-mini-visible-b align-v animated fadeIn">
+                        <img class="img-avatar img-avatar32" src="assets/img/avatars/avatar15.jpg" alt="">
+                    </div>
+                    <!-- END Visible only in mini mode -->
+
+                    <!-- Visible only in normal mode -->
+                    <div class="sidebar-mini-hidden-b text-center">
+                        <a class="img-link" href="be_pages_generic_profile.html">
+                            <img class="img-avatar" src="assets/img/avatars/avatar15.jpg" alt="">
+                        </a>
+                        <ul class="list-inline mt-10">
+                            <li class="list-inline-item">
+                                <a class="link-effect text-dual-primary-dark font-size-xs font-w600 text-uppercase" href="be_pages_generic_profile.html">Invitado</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <!-- Layout API, functionality initialized in Codebase() -> uiApiLayout() -->
+                                <a class="link-effect text-dual-primary-dark" data-toggle="layout" data-action="sidebar_style_inverse_toggle" href="javascript:void(0)">
+                                    <i class="si si-drop"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="link-effect text-dual-primary-dark" href="op_auth_signin.html">
+                                    <i class="si si-logout"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END Visible only in normal mode -->
+                </div>
+                <!-- END Side User -->
+
+                <!-- Side Navigation -->
+                <div class="content-side content-side-full">
+                    <ul class="nav-main">
+                        <li>
+                            <a href="be_pages_dashboard.html"><i class="si si-cup"></i><span class="sidebar-mini-hide">Dashboard</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END Side Navigation -->
+            </div>
+            <!-- Sidebar Content -->
+        </div>
+        <!-- END Sidebar Scroll Container -->
+    </nav>
+    <!-- END Sidebar -->
+
+    <!-- Header -->
+    <header id="page-header">
+        <!-- Header Content -->
+        <div class="content-header">
+
+        </div>
+        <!-- END Header Content -->
+
+        <!-- Header Loader -->
+        <!-- Please check out the Activity page under Elements category to see examples of showing/hiding it -->
+        <div id="page-header-loader" class="overlay-header bg-primary">
+            <div class="content-header content-header-fullrow text-center">
+                <div class="content-header-item">
+                    <i class="fa fa-sun-o fa-spin text-white"></i>
+                </div>
+            </div>
+        </div>
+        <!-- END Header Loader -->
+    </header>
+    <!-- END Header -->
+
+    <!-- Main Container -->
+    <main id="main-container">
+        <!-- Page Content -->
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Bootstrap Login -->
+                    <div class="block block-themed">
+                        <div class="block-header bg-gd-sun">
+                            <h3 class="block-title"><i class="fa fa-id-card-o mr-5"></i><strong>DATOS DEL CONDUCTOR</strong></h3>
+                            <div class="block-options">
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                                    <i class="si si-refresh"></i>
+                                </button>
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                            </div>
+                        </div>
+                        <div class="block-content">
+                            <form action="be_forms_premade.php" method="post" onsubmit="return false;">
+                                <div class="form-group row">
+                                    <label class="col-12" for="register1-username">NOMBRE (S)</label>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="name" placeholder="SPIDER MAN" [(ngModel)]="quotation.name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12" for="register1-email">APELLIDO PATERNO</label>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="name_paternal" placeholder="SÚPER" [(ngModel)]="quotation.name_paternal">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12" for="register1-password">APELLIDO MATERNO</label>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="name_maternal" placeholder="HÉROE" [(ngModel)]="quotation.name_maternal">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12" for="register1-password2">GÉNERO</label>
+                                    <div class="col-12">
+                                        <select class="form-control" name="gender" [(ngModel)]="quotation.gender">
+                                            <option value="0">Seleccionar Género</option>
+                                            <option value="1">MASCULINO</option>
+                                            <option value="2">FEMENINO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12" for="register1-password2">FECHA DE NACIMIENTO</label>
+                                    <div class="col-12">
+                                        <input type="text" class="js-datepicker form-control js-datepicker-enabled" id="example-datepicker3" name="birthdate" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd" [(ngModel)]="quotation.birthdate">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12" for="register1-password">CÓDIGO POSTAL</label>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="zip_code" placeholder="72000" [(ngModel)]="quotation.zip_code">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <label class="css-control css-control-sm css-control-success css-switch">
+                                            <input type="checkbox" class="css-control-input" name="acceptInfoData" [(ngModel)]="info.acceptInfoData">
+                                            <span class="css-control-indicator"></span> CONFIRMAR DATOS
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- END Bootstrap Login -->
+                </div>
+
+                <div class="col-md-6">
+                    <!-- Bootstrap Login -->
+                    <div class="block block-themed">
+                        <div class="block-header bg-gd-sun">
+                            <h3 class="block-title"><i class="fa fa-car mr-5"></i><strong>DATOS DEL VEHÍCULO</strong></h3>
+                            <div class="block-options">
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                                    <i class="si si-refresh"></i>
+                                </button>
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                            </div>
+                        </div>
+                        <div class="block-content">
+                            <form action="be_forms_premade.php" method="post" onsubmit="return false;">
+                                <div class="form-group row">
+                                    <label class="col-12" for="register1-password2">PLACAS</label>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="car_plate" placeholder="0808FPC" [(ngModel)]="quotation.car_plate">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12" for="register1-username">MARCA</label>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="car_make" placeholder="TESLA" [(ngModel)]="quotation.car_make">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12" for="register1-email">MODELO</label>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="car_model" placeholder="MODEL S" [(ngModel)]="quotation.car_model">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12" for="register1-password">AÑO</label>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="car_year" placeholder="2018" [(ngModel)]="quotation.car_year">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12" for="register1-password2">TIPO DE VEHÍCULO</label>
+                                    <div class="col-12">
+                                        <select class="form-control" id="example-select" name="car_type" [(ngModel)]="quotation.car_type">
+                                            <option value="0">Seleccionar tipo de vehículo</option>
+                                            <option value="1">AUTO</option>
+                                            <option value="2">SUV</option>
+                                            <option value="3">PICKUP</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12" for="register1-password2">TRANSMISIÓN</label>
+                                    <div class="col-12">
+                                        <select class="form-control" id="example-select" name="car_transmission" [(ngModel)]="quotation.car_transmission">
+                                            <option value="0">Seleccionar transmision</option>
+                                            <option value="1">MANUAL</option>
+                                            <option value="2">AUTOMÁTICA</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <label class="css-control css-control-sm css-control-success css-switch">
+                                            <input type="checkbox" class="css-control-input" name="acceptInfoCar" [(ngModel)]="info.acceptInfoCar">
+                                            <span class="css-control-indicator"></span> CONFIRMAR DATOS
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- END Bootstrap Login -->
+                </div>
+            </div>
+
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sun">
+                    <h3 class="block-title"><i class="fa fa-user-secret mr-5"></i><strong>PROTECCIÓN CONTRA ROBO</strong></h3>
+                        <div class="block-options">
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                                        <i class="si si-refresh"></i>
+                                </button>
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                        </div>
+                </div>
+                <div class="block-content">
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">ROBO TOTAL</h3>
+                                <div class="block-options">
+                                        <span class="css-control-indicator"></span> INCLUIDO
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Cubre el robo total de tu auto y las pérdidas o daños materiales que sufra a consecuencia del robo. Podrás elegir el deducible aplicable como porcentaje sobre el valor comercial o bien como un monto fijo.</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">ROBO PARCIAL</h3>
+                                <div class="block-options">
+                                        <label class="css-control css-control-sm css-control-success css-switch">
+                                            <input type="checkbox" class="css-control-input" id="register1-terms" name="partial_theft" [(ngModel)]="quotation.partial_theft">
+                                            <span class="css-control-indicator"></span> SOLICITAR
+                                        </label>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Cubre la reposición e instalación a consecuencia de un robo de autopartes y accesorios originales que la armadora adaptó a tu auto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sun">
+                    <h3 class="block-title"><i class="fa fa-users mr-5"></i><strong>RESPONSABILIDAD CIVIL</strong></h3>
+                        <div class="block-options">
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                                        <i class="si si-refresh"></i>
+                                </button>
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                        </div>
+                </div>
+                <div class="block-content">
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">EN BIENES</h3>
+                                <div class="block-options">
+                                    <select class="form-control" name="in_goods" [(ngModel)]="quotation.in_goods">
+                                        <option value="1">$500,000</option>
+                                        <option value="2">$1,000,000</option>
+                                        <option value="3">$1,500,000</option>
+                                    </select>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Cubrimos los daños que puedas ocasionar a terceras personas en sus bienes (casa, auto o negocio).</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">EN PERSONAS</h3>
+                                <div class="block-options">
+                                    <select class="form-control" name="in_person" [(ngModel)]="quotation.in_person">
+                                        <option value="1">$500,000</option>
+                                        <option value="2">$1,000,000</option>
+                                        <option value="3">$1,500,000</option>
+                                    </select>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Esta cobertura te protege cuando causas lesiones corporales o la muerte a terceras personas.</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">EXTENSIÓN DE RESPONSABILIDAD</h3>
+                                <div class="block-options">
+                                        <label class="css-control css-control-sm css-control-success css-switch">
+                                            <input type="checkbox" class="css-control-input" name="extension_responsibility" [(ngModel)]="quotation.extension_responsibility">
+                                            <span class="css-control-indicator"></span> SOLICITAR
+                                        </label>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Cubrimos los daños que ocasiones en un accidente cuando conduzcas otro vehículo que no es el tuyo, siempre y cuando, el vehículo tenga el mismo uso que el tuyo.</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">EXTENSIÓN EN EL EXTRANJERO</h3>
+                                <div class="block-options">
+                                        <label class="css-control css-control-sm css-control-success css-switch">
+                                            <input type="checkbox" class="css-control-input" name="mandatory_responsibility" [(ngModel)]="quotation.mandatory_responsibility">
+                                            <span class="css-control-indicator"></span> SOLICITAR
+                                        </label>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Ampara la responsabilidad civil en el extranjero por daños en los bienes materiales, lesiones corporales y muerte del tercero.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sun">
+                    <h3 class="block-title"><i class="fa fa-exclamation-circle mr-5"></i><strong>PROTECCIÓN CONTRA DAÑOS</strong></h3>
+                        <div class="block-options">
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                                        <i class="si si-refresh"></i>
+                                </button>
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                        </div>
+                </div>
+                <div class="block-content">
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">DAÑOS MATERIALES</h3>
+                                <div class="block-options">
+                                    <select class="form-control" name="material_damage" [(ngModel)]="quotation.material_damage">
+                                        <option value="1">3%</option>
+                                        <option value="2">5%</option>
+                                        <option value="3">7%</option>
+                                        <option value="4">10%</option>
+                                        <option value="5">20%</option>
+                                        <option value="6">25%</option>
+                                    </select>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Cubre los daños de tu auto a consecuencia de un accidente automovilístico. Podrás elegir el deducible aplicable como porcentaje sobre el valor comercial.</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">SEGURO DE LLANTAS</h3>
+                                <div class="block-options">
+                                        <label class="css-control css-control-sm css-control-success css-switch">
+                                            <input type="checkbox" class="css-control-input" name="tire_insurance" [(ngModel)]="quotation.tire_insurance">
+                                            <span class="css-control-indicator"></span> SOLICITAR
+                                        </label>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Cubre daños materiales a la llanta y el rin a consecuencia de accidente o impacto que los inhabilite.</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">ROTURA DE CRISTALES</h3>
+                                <div class="block-options">
+                                        <label class="css-control css-control-sm css-control-success css-switch">
+                                            <input type="checkbox" class="css-control-input" name="third_without_insurance" [(ngModel)]="quotation.third_without_insurance">
+                                            <span class="css-control-indicator"></span> SOLICITAR
+                                        </label>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Cubre daños en cristales afectados, quemacocos, techos corredizos, sus mecanismos así como las gomas y sus herrajes de soporte. Deducible 20%.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sun">
+                    <h3 class="block-title"><i class="fa fa-ambulance mr-5"></i><strong>ASISTENCIA Y GASTOS MÉDICOS</strong></h3>
+                        <div class="block-options">
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                                        <i class="si si-refresh"></i>
+                                </button>
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                        </div>
+                </div>
+                <div class="block-content">
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">DEFENSA LEGAL</h3>
+                                <div class="block-options">
+                                        <span class="css-control-indicator"></span> INCLUIDO
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Si en un accidente de tránsito te ves involucrado en la comisión imprudencial de delitos, podrás contar con servicio legal con abogados las 24 horas del día, los 365 días del año.</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">PARA OCUPANTES</h3>
+                                <div class="block-options">
+                                    <select class="form-control" name="for_occupants" [(ngModel)]="quotation.for_occupants">
+                                        <option value="1">$200,000</option>
+                                        <option value="2">$300,000</option>
+                                        <option value="3">$400,000</option>
+                                        <option value="4">$500,000</option>
+                                        <option value="5">$1,000,000</option>
+                                    </select>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Cubre los servicios médicos para ti y para tus acompañantes en un accidente. Incluye los gastos de hospitalización, servicio de ambulancia, lentes, prótesis ortopédicas y dentales.</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">AUXILIO VIAL</h3>
+                                <div class="block-options">
+                                        <label class="css-control css-control-sm css-control-success css-switch">
+                                            <input type="checkbox" class="css-control-input" name="road_aid" [(ngModel)]="quotation.road_aid">
+                                            <span class="css-control-indicator"></span> SOLICITAR
+                                        </label>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>¿Se te ponchó una llanta? ¿Necesitas una grúa? ¿Te quedaste sin gasolina? Para esto y más, existe esta cobertura.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block block-themed">
+                <div class="block-header bg-gd-sun">
+                    <h3 class="block-title"><i class="fa fa-star mr-5"></i><strong>EXTRAS</strong></h3>
+                        <div class="block-options">
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                                        <i class="si si-refresh"></i>
+                                </button>
+                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                        </div>
+                </div>
+                <div class="block-content">
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">AUTO SUSTITUTO</h3>
+                                <div class="block-options">
+                                    <select class="form-control" name="auto_substitute" [(ngModel)]="quotation.auto_substitute">
+                                        <option value="1">7 DÍAS</option>
+                                        <option value="2">10 DÍAS</option>
+                                        <option value="3">15 DÍAS</option>
+                                        <option value="4">20 DÍAS</option>
+                                    </select>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Te prestamos un auto por máximo 20 días si el tuyo está en reparación a causa de un accidente o es declarado pérdida total.</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">DEVOLUCIÓN DE PRIMA</h3>
+                                <div class="block-options">
+                                        <label class="css-control css-control-sm css-control-success css-switch">
+                                            <input type="checkbox" class="css-control-input" name="primax" [(ngModel)]="quotation.primax">
+                                            <span class="css-control-indicator"></span> SOLICITAR
+                                        </label>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>En caso de pérdida total, se indemnizará sin la aplicación del deducible, además se te devuelve el importe de la prima neta cobrada.</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">EQUIPO ESPECIAL</h3>
+                                <div class="block-options">
+                                        <label class="css-control css-control-sm css-control-success css-switch">
+                                            <input type="checkbox" class="css-control-input" name="special_team" [(ngModel)]="quotation.special_team">
+                                            <span class="css-control-indicator"></span> SOLICITAR
+                                        </label>
+                                </div>
+                        </div>
+                        <div class="block-content">
+                            <p>Protege el equipo instalado que no incluyó el fabricante (rines, estéreos, bocinas, etc.) para las coberturas de daños materiales y robo total.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-12">
+                    <button type="button" class="btn btn-alt-success" (click)="onSaveQuotation()">
+                        <i class="fa fa-plus mr-5"></i> ENVIAR DATOS
+                    </button>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="block-header block-header-default">
+                    <h3 class="block-title">AVISO DE PRIVACIDAD</h3>
+                </div>
+                <div class="block-content">
+                    <p>Nuestros planes de protección te aseguran andar tranquilo por donde vayas, además puedes personalizarlo adaptando los límites y deducibles o añadiendo otras coberturas que evitarán detener tu camino.</p>
+                    <p>Si usted tiene algún comentario o considera que sus Datos Personales han sufrido algún tipo de vulneración, puede contactar a nuestra Área de Protección de Datos Personales, enviando un correo electrónico a privacidad@orpseguros.com.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- END Main Content -->
+        <!-- END Page Content -->
+    </main>
+    <!-- END Main Container -->
+
+    <!-- Footer -->
+    <footer id="page-footer" class="opacity-0">
+        <div class="content py-20 font-size-xs clearfix">
+            <div class="float-right">
+
+            </div>
+            <div class="float-left">
+                <a class="font-w600" href="#" target="_blank">ORP SEGUROS</a> &copy; <span class="js-year-copy">2018</span>
+            </div>
+        </div>
+    </footer>
+    <!-- END Footer -->
+</div>
+<!-- END Page Container -->
